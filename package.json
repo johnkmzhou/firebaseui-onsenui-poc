@@ -1,0 +1,23 @@
+{
+  "name": "firebaseui-onsenui-poc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^4.9.0",
+    "onsenui": "^2.8.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-firebaseui": "^1.0.10",
+    "react-onsenui": "^1.9.0",
+    "react-redux-firebase": "^2.0.2",
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
