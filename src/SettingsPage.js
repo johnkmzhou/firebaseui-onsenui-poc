@@ -1,9 +1,9 @@
 import React from 'react';
 import { Page, Button } from 'react-onsenui';
 
-import { LoginPage } from './LoginPage';
+import LoginPage from './LoginPage';
 
-export const SettingsPage = props => {
+const SettingsPage = props => {
   const pushLoginPage = event => props.navigator.pushPage({ component: LoginPage, props: { key: 'login' } });
 
   return (
@@ -13,3 +13,5 @@ export const SettingsPage = props => {
     </Page>
   );
 }
+
+export default SettingsPage;

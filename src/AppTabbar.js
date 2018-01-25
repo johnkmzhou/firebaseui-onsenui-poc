@@ -1,10 +1,10 @@
 import React from 'react';
 import { Page, Tabbar, Tab } from 'react-onsenui';
 
-import { HomePage } from './HomePage';
-import { SettingsPage } from './SettingsPage';
+import HomePage from './HomePage';
+import SettingsPage from './SettingsPage';
 
-export const AppTabbar = props => {
+const AppTabbar = props => {
   const renderTabs = navigator => [
     {
       content: <HomePage key="home" navigator={props.navigator} />,
@@ -22,3 +22,5 @@ export const AppTabbar = props => {
     </Page>
   );
 };
+
+export default AppTabbar;

@@ -4,7 +4,7 @@ import { Navigator } from 'react-onsenui';
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 
-import { AppTabbar } from './AppTabbar';
+import AppTabbar from './AppTabbar';
 
 class App extends React.Component {
   renderPage = (route, navigator) => {
