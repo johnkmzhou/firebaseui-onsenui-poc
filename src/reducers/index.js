@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import { firebaseReducer } from 'react-redux-firebase';
 
 const authReducer = (state = { firebaseAuthMounted: false }, action) => {
-  console.log(action.type);
   switch (action.type) {
     case 'CREATE_FIREBASEAUTH':
       return { firebaseAuthMounted: true };

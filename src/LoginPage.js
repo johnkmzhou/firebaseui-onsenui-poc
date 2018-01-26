@@ -16,7 +16,6 @@ const LoginPage = props => {
     ],
     callbacks: {
       signInSuccess: currentUser => {
-        props.createUserProfile(currentUser);
         console.log(currentUser);
         return false;
       }
@@ -29,6 +28,7 @@ const LoginPage = props => {
       {props.firebaseAuthMounted ?
         <FirebaseAuth elementId="auth_2" uiConfig={uiConfig} firebaseAuth={props.firebase.auth()} />
         : null}
+      <pre>{JSON.stringify(props.auth, null, 2)}</pre>
     </Page>
   );
 }

@@ -9,7 +9,6 @@ import { rootReducer } from './reducers';
 // react-redux-firebase options
 export const reduxConfig = {
   userProfile: 'users', // firebase root where user profiles are stored
-  attachAuthIsReady: true, // attaches auth is ready promise to store
   updateProfileOnLogin: true
 };
 
@@ -25,11 +24,6 @@ export const createInitialStore = (initialState = {}) => {
 
   // Create store with reducers and initial state
   const store = createStoreWithFirebase(rootReducer, initialState);
-
-  // Listen for auth ready (promise available on store thanks to attachAuthIsReady: true config option)
-  store.firebaseAuthIsReady.then(() => {
-    console.log('Auth has loaded'); // eslint-disable-line no-console
-  });
 
   return store;
 };

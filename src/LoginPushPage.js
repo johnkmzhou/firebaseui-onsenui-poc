@@ -27,7 +27,6 @@ const LoginPushPage = props => {
     ],
     callbacks: {
       signInSuccess: currentUser => {
-        props.createUserProfile(currentUser);
         console.log(currentUser);
         return false;
       }
@@ -38,6 +37,7 @@ const LoginPushPage = props => {
     <Page renderToolbar={renderToolbar}>
       <h1>Login Push Page</h1>
       <FirebaseAuth elementId="auth_1" uiConfig={uiConfig} firebaseAuth={props.firebase.auth()} />
+      <pre>{JSON.stringify(props.auth, null, 2)}</pre>
     </Page>
   );
 }
