@@ -3,6 +3,18 @@ import { actionTypes } from 'react-redux-firebase';
 
 import { reduxConfig } from '../configureStore';
 
+export const createFirebaseAuth = () => {
+  return {
+    type: 'CREATE_FIREBASEAUTH'
+  }
+}
+
+export const destroyFirebaseAuth = () => {
+  return {
+    type: 'DESTROY_FIREBASEAUTH'
+  }
+}
+
 // recreating code from react-redux-firebase
 export const createUserProfile = currentUser => {
   const profile = {

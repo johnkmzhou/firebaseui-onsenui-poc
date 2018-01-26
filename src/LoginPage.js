@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Toolbar, BackButton } from 'react-onsenui';
+import { Page } from 'react-onsenui';
 import { FirebaseAuth } from 'react-firebaseui';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -8,11 +8,6 @@ import { firebaseConnect } from 'react-redux-firebase';
 import { createUserProfile } from './actions';
 
 const LoginPage = props => {
-  const renderToolbar = () =>
-    <Toolbar>
-      <div className="left"><BackButton>Back</BackButton></div>
-    </Toolbar>;
-
   const uiConfig = {
     signInFlow: 'redirect',
     signInOptions: [
@@ -29,13 +24,20 @@ const LoginPage = props => {
   };
 
   return (
-    <Page renderToolbar={renderToolbar}>
-      <FirebaseAuth uiConfig={uiConfig} firebaseAuth={props.firebase.auth()} />
+    <Page>
+      <h1>Login Page</h1>
+      {props.firebaseAuthMounted ?
+        <FirebaseAuth elementId="auth_2" uiConfig={uiConfig} firebaseAuth={props.firebase.auth()} />
+        : null}
     </Page>
   );
 }
 
+function mapStateToProps({ firebase: { auth }, authReducer: { firebaseAuthMounted } }) {
+  return { auth, firebaseAuthMounted };
+}
+
 export default compose(
   firebaseConnect(),
-  connect(({ firebase: { auth } }) => ({ auth }), { createUserProfile })
+  connect(mapStateToProps, { createUserProfile })
 )(LoginPage);

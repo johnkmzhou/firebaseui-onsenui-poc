@@ -1,10 +1,10 @@
 import React from 'react';
 import { Page, Button } from 'react-onsenui';
 
-import LoginPage from './LoginPage';
+import LoginPushPage from './LoginPushPage';
 
 const SettingsPage = props => {
-  const pushLoginPage = event => props.navigator.pushPage({ component: LoginPage, props: { key: 'login' } });
+  const pushLoginPage = () => props.navigator.pushPage({ component: LoginPushPage, props: { key: 'loginpush' } });
 
   return (
     <Page>
